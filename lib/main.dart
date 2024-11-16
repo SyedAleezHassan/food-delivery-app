@@ -1,4 +1,4 @@
-//start food delivery app project and will finish it inshaALLAH
+//start food delivery app project and will finish it inshaALLAH..
 import 'package:flutter/material.dart';
 
 import 'screens/get Started/welcomeScreen.dart';
