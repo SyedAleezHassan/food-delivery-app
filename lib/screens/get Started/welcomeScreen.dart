@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app_flutter/screens/login%20&%20signup/loginPage.dart';
 
 class getStarted extends StatelessWidget {
   const getStarted({super.key});
@@ -31,20 +32,26 @@ class getStarted extends StatelessWidget {
           Positioned(
             bottom: 35,
             right: 70,
-            child: Container(
-              height: 50, // increased height for better appearance
-              width: 240, // increased width for better appearance
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(19),
-              ),
-              alignment: Alignment.center,
-              child: Text(
-                "Get Started",
-                style: TextStyle(
-                  color: Color(0xffbFF460A),
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16, // adjust font size as needed
+            child: InkWell(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => loginPage()));
+              },
+              child: Container(
+                height: 50, // increased height for better appearance
+                width: 240, // increased width for better appearance
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(19),
+                ),
+                alignment: Alignment.center,
+                child: Text(
+                  "Get Started",
+                  style: TextStyle(
+                    color: Color(0xffbFF460A),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16, // adjust font size as needed
+                  ),
                 ),
               ),
             ),
