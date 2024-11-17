@@ -35,7 +35,7 @@ class getStarted extends StatelessWidget {
             child: InkWell(
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => loginPage()));
+                    MaterialPageRoute(builder: (context) => LoginPage()));
               },
               child: Container(
                 height: 50, // increased height for better appearance
