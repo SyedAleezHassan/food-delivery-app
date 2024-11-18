@@ -31,18 +31,18 @@ class getStarted extends StatelessWidget {
               child: Image.asset('assets/images/bot shade.png')),
           Positioned(
             bottom: 35,
-            right: 70,
+            right: 40,
             child: InkWell(
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => LoginPage()));
               },
               child: Container(
-                height: 50, // increased height for better appearance
-                width: 240, // increased width for better appearance
+                height: 55, // increased height for better appearance
+                width: 290, // increased width for better appearance
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(19),
+                  borderRadius: BorderRadius.circular(29),
                 ),
                 alignment: Alignment.center,
                 child: Text(
