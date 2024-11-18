@@ -14,6 +14,7 @@ class LoginPage extends StatelessWidget {
     return DefaultTabController(
       length: 2, // Number of tabs
       child: Scaffold(
+        // backgroundColor: Color(0xF6F6F9),
         body: Column(
           // mainAxisAlignment: MainAxisAlignment.end,
           children: [
@@ -21,9 +22,12 @@ class LoginPage extends StatelessWidget {
               height: screenHeight * 0.4, // Less than half of the screen height
               margin: EdgeInsets.symmetric(horizontal: 2, vertical: 10),
               decoration: BoxDecoration(
-                color: Color(0xbbFFFFFF),
+                image: const DecorationImage(
+                  image: AssetImage('assets/images/chef.png'),
+                ),
+                color: Color.fromARGB(253, 253, 253, 253),
                 borderRadius: BorderRadius.circular(35),
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                     color: Colors.black12,
                     blurRadius: 10,
@@ -31,6 +35,7 @@ class LoginPage extends StatelessWidget {
                   ),
                 ],
               ),
+
               child: const Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -47,7 +52,7 @@ class LoginPage extends StatelessWidget {
                 ],
               ),
             ),
-            Expanded(
+            const Expanded(
               child: TabBarView(
                 children: [
                   login(), // Content for Login tab

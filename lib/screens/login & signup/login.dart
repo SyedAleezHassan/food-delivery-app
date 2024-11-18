@@ -10,6 +10,29 @@ class login extends StatefulWidget {
 class _loginState extends State<login> {
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('this is login page'),);
+    return Scaffold(
+      backgroundColor: Color(0xF2F2F2),
+      body: Container(
+        margin: EdgeInsets.only(left: 30, right: 30),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 30,
+            ),
+            TextField(
+              decoration: InputDecoration(label: Text('Email address')),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            TextField(
+              decoration: InputDecoration(label: Text('Password')),
+            ),
+            TextButton(onPressed: () {}, child: Text('forgot passcode'))
+          ],
+        ),
+      ),
+    );
   }
 }
