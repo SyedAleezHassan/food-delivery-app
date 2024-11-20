@@ -57,7 +57,7 @@ class _loginState extends State<login> {
                     width: 290, // increased width for better appearance
                     decoration: BoxDecoration(
                       color: Color(0xffbFF460A),
-                      borderRadius: BorderRadius.circular(30),
+                      borderRadius: BorderRadius.circular(29),
                     ),
                     alignment: Alignment.center,
                     child: Text(
