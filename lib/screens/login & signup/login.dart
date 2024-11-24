@@ -20,19 +20,19 @@ class _loginState extends State<login> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
-              TextField(
+              const TextField(
                 decoration: InputDecoration(label: Text('Email address')),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 35,
               ),
-              TextField(
+              const TextField(
                 decoration: InputDecoration(label: Text('Password')),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               TextButton(
@@ -45,22 +45,22 @@ class _loginState extends State<login> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(top: 120, left: 26),
+                margin: const EdgeInsets.only(top: 120, left: 26),
                 child: InkWell(
                   onTap: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => homePage()));
+                        MaterialPageRoute(builder: (context) =>  navBar()));
                   },
                   child: Container(
                     // margin: EdgeInsets.only(bottom: 5, left: 26),
                     height: 55, // increased height for better appearance
                     width: 290, // increased width for better appearance
                     decoration: BoxDecoration(
-                      color: Color(0xffbFF460A),
+                      color: const Color(0xffbFF460A),
                       borderRadius: BorderRadius.circular(29),
                     ),
                     alignment: Alignment.center,
-                    child: Text(
+                    child: const Text(
                       "Get Started",
                       style: TextStyle(
                         color: Color(0xffbFFFFF),
