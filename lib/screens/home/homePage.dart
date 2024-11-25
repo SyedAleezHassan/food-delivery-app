@@ -1,77 +1,78 @@
-// import 'package:flutter/material.dart';
-
-// class navBar extends StatefulWidget {
-//   const navBar({super.key});
-
-//   @override
-//   State<navBar> createState() => _navBarState();
-// }
-
-// class _navBarState extends State<navBar> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Center(child: Text('This is home page syed sahab'),),
-//     );
-//   }
-// }
-
 import 'package:flutter/material.dart';
+import 'package:food_app_flutter/screens/home/home_page_items/drinks.dart';
+import 'package:food_app_flutter/screens/home/home_page_items/foods.dart';
+import 'package:food_app_flutter/screens/home/home_page_items/sauce.dart';
+import 'package:food_app_flutter/screens/home/home_page_items/snacks.dart';
 
-class navBar extends StatefulWidget {
+class homePage extends StatefulWidget {
+  const homePage({super.key});
+
   @override
-  _navBarState createState() => _navBarState();
+  State<homePage> createState() => _homePageState();
 }
 
-class _navBarState extends State<navBar> {
-  int _selectedIndex = 0; // Default selected index is Home (0)
-
-  // List of pages
-  final List<Widget> _pages = [
-    Center(child: Text("Home Page", style: TextStyle(fontSize: 24))),
-    Center(child: Text("Favourite Page", style: TextStyle(fontSize: 24))),
-    Center(child: Text("Login Page", style: TextStyle(fontSize: 24))),
-    Center(child: Text("History Page", style: TextStyle(fontSize: 24))),
-  ];
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index; // Update the selected index
-    });
-  }
-
+class _homePageState extends State<homePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Bottom Navigation Bar"),
-        backgroundColor: Colors.blue,
-      ),
-      body: _pages[_selectedIndex], // Display the selected page
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex, // Set the selected index
-        onTap: _onItemTapped, // Handle item tap
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: "Home",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: "Favourite",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.login),
-            label: "Login",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.history),
-            label: "History",
-          ),
-        ],
-        type: BottomNavigationBarType.fixed, // Ensures all items are shown
-        selectedItemColor: Colors.blue, // Highlight color for the selected item
-        unselectedItemColor: Colors.grey, // Color for unselected items
+    // Calculate screen height
+    double screenHeight = MediaQuery.of(context).size.height;
+
+    return DefaultTabController(
+      length: 4, // Number of tabs
+      child: Scaffold(
+        // backgroundColor: Color(0xF6F6F9),
+        body: Column(
+          // mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Container(
+              height: screenHeight * 0.4, // Less than half of the screen height
+              margin: EdgeInsets.symmetric(horizontal: 2, vertical: 10),
+              decoration: BoxDecoration(
+                image: const DecorationImage(
+                  image: AssetImage('assets/images/chef.png'),
+                ),
+                color: Color.fromARGB(253, 253, 253, 253),
+                borderRadius: BorderRadius.circular(35),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Colors.black12,
+                    blurRadius: 10,
+                    offset: Offset(0, 4),
+                  ),
+                ],
+              ),
+
+              child: const Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  // TabBar with custom style
+                  TabBar(
+                    labelColor: Color(0xffbFF460A),
+                    unselectedLabelColor: Colors.grey,
+                    indicatorColor: Colors.blue,
+                    tabs: [
+                      Tab(text: "Foods"),
+                      Tab(text: "Drinks"),
+                      Tab(text: "Snacks"),
+                      Tab(text: "Sauces"),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            const Expanded(
+              child: TabBarView(
+                children: [
+                  foods(),
+                  drinks(),
+                  snacks(),
+                  sauce()
+                  // signUp(), // Content for Signup tab
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
