@@ -1,3 +1,4 @@
+//this is drink page of food delivery app
 import 'package:flutter/material.dart';
 
 class drinks extends StatefulWidget {
